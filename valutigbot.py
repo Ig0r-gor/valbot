@@ -42,5 +42,5 @@ def botconvert(message: telebot.types.Message):
         text = f'Цена {amount} {quote} составляет {round(total_base, 2)} {base}'
         bot.send_message(message.chat.id, text)
 
-bot.polling(none_stop=True)
-#bot.polling()
+# bot.polling(none_stop=True)
+bot.polling()
