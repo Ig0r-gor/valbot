@@ -1,4 +1,4 @@
-TOKEN = "1993593302:AAF_WLk91KaoCCI3qZmJFJ3stykSJYoUNbM"
+TOKEN = "используйте свой токен"
 
 money = {
     'Доллар': 'USD',
