@@ -34,20 +34,20 @@ def botconvert(message: telebot.types.Message):
         if len(values) != 3:
             raise APIException('Ошибка с количеством параметров')
 
-        quote, base, amount = values
+        base, quote, amount = values
         for key in moneykey:
-            if quote in moneykey[key]:
-                quote = key
-            elif base in moneykey[key]:
+            if base in moneykey[key]:
                 base = key
-        total_base = MoneyConverter.get_price(quote, base, amount)
+            elif quote in moneykey[key]:
+                quote = key
+        total_base = MoneyConverter.get_price(base, quote, amount)
     except APIException as e:
         bot.reply_to(message, f'Ошибка пользователя:\n{e}')
     except Exception as e:
         bot.reply_to(message, f'Возникли проблемы с обработкой\n{e}')
     else:
-        text = f'Цена {amount} {quote} составляет {round(total_base, 2)} {base}'
+        text = f'Цена {amount} {base} составляет {round(total_base, 2)} {quote}'
         bot.send_message(message.chat.id, text)
-
+        
 # bot.polling(none_stop=True)
 bot.polling()
