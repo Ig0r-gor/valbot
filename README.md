@@ -1,4 +1,4 @@
-# Gorbachev Igor QAP33 
+# Gorbachev Igor QAP39 
 # valbot
 # tg_bot_vallue_exchange
 # Бот перевода валют по актуальному курсу
